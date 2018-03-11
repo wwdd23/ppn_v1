@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180311202231) do
+ActiveRecord::Schema.define(version: 20180311202234) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -135,6 +135,12 @@ ActiveRecord::Schema.define(version: 20180311202231) do
   create_table "migrations", force: :cascade do |t|
     t.string  "migration", limit: 255, null: false
     t.integer "batch",     limit: 4,   null: false
+  end
+
+  create_table "new_tags", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "password_resets", id: false, force: :cascade do |t|
