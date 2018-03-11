@@ -41,6 +41,7 @@ ActiveAdmin.register Post do
       #f.input :source, :lable => "来源"
       f.input :pubdate, as: :datetime_picker, :input_html => {:width => 100}
     end
+    
     f.actions
   end
 
