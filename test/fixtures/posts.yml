@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 1
+  title: MyString
+  description: MyText
+  content: MyText
+  url: MyString
+  source: MyString
+  pubdate: 2018-03-11 14:20:38
+  real_number: 1
+  fake_number: 1
+
+two:
+  type: 1
+  title: MyString
+  description: MyText
+  content: MyText
+  url: MyString
+  source: MyString
+  pubdate: 2018-03-11 14:20:38
+  real_number: 1
+  fake_number: 1
