@@ -35,8 +35,8 @@ ActiveAdmin.register Post do
     f.inputs 'Deatails' do
       f.input :title, :lable => "标题"
       f.input :type, :lable => "分类"
-      #f.input :content, :lable => "内容", as: :kindeditor, :input_html => { :height => 300 }  
-      f.input :content, :lable => "内容", as: :froala_editor, :input_html => { :height => 40 }  
+      f.input :content, :lable => "内容", as: :ckeditor , :cke_article_content => { :width=> 70, :overfolw => "hidden" }  
+      #f.input :content, :lable => "内容", as: :froala_editor, :input_html => { :height => 40 }  
       #f.input :url, :lable => "url"
       #f.input :source, :lable => "来源"
       f.input :pubdate, as: :datetime_picker, :input_html => {:width => 100}

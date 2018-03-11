@@ -13,7 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require simditor
-
 //= require kindeditor
 //= require_tree .

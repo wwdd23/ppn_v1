@@ -46,10 +46,11 @@ gem 'font-awesome-rails'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'activeadmin_blaze_theme'
-gem 'activeadmin_froala_editor'
+#gem 'activeadmin_froala_editor'
 gem 'simditor-rails'
 gem 'rails_kindeditor'
 
+gem 'ckeditor'
 #gem "active_material", github: "vigetlabs/active_material"
 
 
