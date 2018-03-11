@@ -4,9 +4,15 @@ class Post < ActiveRecord::Base
     before_save :set_post_unique_id
     before_save :set_pubdate
     before_save :set_description
+    before_save :set_source
 
 
 
+    def set_source
+      if self.source == "NuLL"
+        self.source = nil
+      end
+    end
 
     def set_post_unique_id
       self.post_unique_id ||= Digest::MD5.hexdigest(self.title)

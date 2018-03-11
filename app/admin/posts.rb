@@ -16,19 +16,29 @@ ActiveAdmin.register Post do
 
     column :id
     column "标题", :title, :sortable => :title
-    column "分类", :type, :collection => [[1, "研究院" ], [2 , "今日新闻" ]]
+    #column "分类", :type, :collection => [[1, "研究院" ], [2 , "今日新闻" ]]
+    column "分类", :type do |t|
+      case t.type
+      when 1
+        span  "研究院"  
+      when 2
+        span  "今日新闻" 
+      when 0
+        span "实时动态"
+      end
+    end
     #column :content, :sortable => :content
     #column :pubdate, :sortable => :pubdate
     column :created_at
     column :updated_at
-    column :source
+    column :source 
     #column :url, :sortable => :url
     actions
   end
 
-  #filter :new_tag
+  filter :type
   filter :title
-  filter :created_at
+  filter :created_at 
   filter :updated_at
 
   form  do |f|
@@ -40,7 +50,7 @@ ActiveAdmin.register Post do
       #f.input :content, :lable => "内容", as: :froala_editor, :input_html => { :height => 40 }  
       #f.input :url, :lable => "url"
       #f.input :source, :lable => "来源"
-      f.input :pubdate, as: :date_select
+      f.input :pubdate,  as: :datepicker
     end
     
     f.actions
