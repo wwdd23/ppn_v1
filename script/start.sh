@@ -2,7 +2,7 @@
 
 #UNICORN=/usr/local/ruby/bin/unicorn_rails         
 
-_pid=`cat /opt/work/data-analysis/tmp/pids/unicorn_data.pid`; sudo kill -USR2 $_pid; sudo kill -QUIT $_pid; ps -ef | grep unicorn | grep master
+_pid=`cat /opt/work/ppn_v1/tmp/pids/unicorn_data.pid`; sudo kill -USR2 $_pid; sudo kill -QUIT $_pid; ps -ef | grep unicorn | grep master
 #while true; do
 #  sleep 10
 #

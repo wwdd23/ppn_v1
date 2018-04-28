@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180311202234) do
+ActiveRecord::Schema.define(version: 20180428015736) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -143,6 +143,12 @@ ActiveRecord::Schema.define(version: 20180311202234) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "news_types", force: :cascade do |t|
+    t.string   "name",       limit: 255, null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "password_resets", id: false, force: :cascade do |t|
     t.string   "email",      limit: 255, null: false
     t.string   "token",      limit: 255, null: false
@@ -152,14 +158,14 @@ ActiveRecord::Schema.define(version: 20180311202234) do
   add_index "password_resets", ["email"], name: "password_resets_email_index", length: {"email"=>191}, using: :btree
 
   create_table "posts", force: :cascade do |t|
-    t.integer  "type",           limit: 4,     default: 0,      null: false
-    t.string   "title",          limit: 255,   default: "",     null: false
-    t.text     "description",    limit: 65535,                  null: false
-    t.text     "content",        limit: 65535
+    t.integer  "type",           limit: 4,          default: 0,      null: false
+    t.string   "title",          limit: 255,        default: "",     null: false
+    t.text     "description",    limit: 4294967295,                  null: false
+    t.text     "content",        limit: 4294967295
     t.string   "url",            limit: 255
-    t.string   "source",         limit: 255,   default: "NuLL"
-    t.string   "post_unique_id", limit: 191,                    null: false
-    t.datetime "pubdate",                                       null: false
+    t.string   "source",         limit: 255,        default: "NuLL"
+    t.string   "post_unique_id", limit: 191,                         null: false
+    t.datetime "pubdate",                                            null: false
     t.integer  "real_number",    limit: 4
     t.integer  "fake_number",    limit: 4
     t.datetime "created_at"
